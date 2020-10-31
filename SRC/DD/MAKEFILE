@@ -1,0 +1,13 @@
+#all: dd.com
+
+dd.com: dd.o bios.o
+	ln -o dd.com dd.o bios.o -lc
+
+clean:
+	del dd.com
+	del dd.o
+	del bios.o
+
+install: dd.com
+	copy dd.com \bin
+

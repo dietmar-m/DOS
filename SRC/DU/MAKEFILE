@@ -1,0 +1,30 @@
+
+CFLAGS=-I\include
+BINDIR=d:\bin
+
+all: du.com xdel.com
+
+du.com: du.o dos.o
+	ln -o du.com du.o dos.o -lc
+
+xdir.com: xdir.o dos.o
+	ln -o xdir.com xdir.o dos.o -lc
+
+xdel.com: xdel.o dos.o
+	ln -o xdel.com xdel.o dos.o -lc
+
+clean:
+	del du.com
+	del du.o
+#	del xdir.com
+#	del xdir.o
+	del xdel.com
+	del xdel.o
+	del dos.o
+
+#install: du.com xdir.com xdel.com
+install: all
+	copy du.com $(BINDIR)
+#	copy xdir.com $(BINDIR)
+	copy xdel.com $(BINDIR)
+
